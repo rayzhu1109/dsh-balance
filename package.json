@@ -1,0 +1,55 @@
+{
+  "name": "dsh-balance",
+  "version": "1.0.0",
+  "description": "DeepSeek 账户余额与最近 5 天消费趋势小插件：在侧边栏底部实时显示余额，点击展开 5 天消费柱状图（dsh-market 可安装）。",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "balance",
+    "billing",
+    "usage",
+    "sidebar"
+  ],
+  "author": "rayzhu1109 <rayzhu1109@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayzhu1109/dsh-balance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rayzhu1109/dsh-balance/issues"
+  },
+  "homepage": "https://github.com/rayzhu1109/dsh-balance#readme",
+  "files": [
+    "lib",
+    "client",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-theme"
+      ],
+      "platform": "web"
+    }
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  }
+}
